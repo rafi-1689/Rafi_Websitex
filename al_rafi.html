@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Abu Bakar Al Rafi — Aspiring Software Engineer, Technology Enthusiast, Public Speaker, Script Writer and Event Organizer.">
+<title>Abu Bakar Al Rafi — Portfolio</title>
+<style>
+:root{
+  --bg:#07090d; --bg2:#0c1017; --card:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.10); --text:#f4f7fb; --muted:#9ba5b5;
+  --accent:#7c5cff; --accent2:#19d3ae; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 80% 10%,rgba(124,92,255,.15),transparent 28%),
+radial-gradient(circle at 10% 60%,rgba(25,211,174,.07),transparent 25%),var(--bg);
+color:var(--text);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,9,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{border-color:var(--line)}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:1.1rem}
+.logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:28px;color:#c7ced9;font-size:.92rem}
+.nav-links a{transition:.25s}.nav-links a:hover{color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:1.4rem}
+.hero{min-height:100vh;display:grid;place-items:center;padding:130px 0 80px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:rgba(255,255,255,.035);padding:8px 13px;border-radius:999px;color:#c8cfdb;font-size:.82rem;margin-bottom:24px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 14px var(--accent2)}
+h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.98;letter-spacing:-.065em;max-width:850px}
+.gradient{background:linear-gradient(110deg,#fff 20%,#a99bff 60%,#68f1d5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:650px;margin:25px 0 32px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:13px 19px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:.92rem;transition:.25s;display:inline-flex;align-items:center;gap:9px}
+.btn.primary{background:#f5f7fb;color:#090b10;border-color:#f5f7fb}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(0,0,0,.3)}
+.btn.secondary{background:rgba(255,255,255,.045)}
+.hero-card{min-height:470px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));border-radius:30px;padding:26px;position:relative;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.35)}
+.orb{position:absolute;width:230px;height:230px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));filter:blur(1px);opacity:.18;right:-60px;top:-50px}
+.code{position:absolute;inset:28px;border:1px solid var(--line);border-radius:22px;background:#080b11;overflow:hidden}
+.codebar{height:40px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 15px;gap:7px}
+.codebar i{width:9px;height:9px;border-radius:50%;background:#303743}
+.codebody{padding:30px;font-family:"SFMono-Regular",Consolas,monospace;font-size:.86rem;color:#aeb7c7}
+.codebody .key{color:#9e8cff}.codebody .str{color:#69dfc2}.codebody .fn{color:#fff}.codebody .comment{color:#566171}
+.section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:42px}
+.kicker{color:var(--accent2);font-size:.76rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+h2{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.05em;line-height:1.1;margin-top:8px}
+.section-head p{max-width:450px;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:30px;transition:.3s}
+.panel:hover,.skill:hover,.exp:hover{transform:translateY(-5px);border-color:rgba(124,92,255,.35)}
+.panel p{color:var(--muted);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{padding:23px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
+.stat strong{font-size:2rem;display:block}.stat span{color:var(--muted);font-size:.85rem}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{border:1px solid var(--line);padding:25px;border-radius:19px;background:var(--card);transition:.3s}
+.skill .icon{font-size:1.35rem;margin-bottom:18px}.skill h3{font-size:1rem}.skill p{color:var(--muted);font-size:.88rem;margin-top:7px}
+.timeline{display:grid;gap:16px}
+.exp{display:grid;grid-template-columns:180px 1fr;gap:30px;border:1px solid var(--line);padding:28px;border-radius:20px;background:var(--card);transition:.3s}
+.exp .date{color:var(--accent2);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.exp h3{font-size:1.15rem}.exp p{color:var(--muted);margin-top:7px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.tag{font-size:.73rem;padding:5px 9px;border-radius:999px;background:rgba(124,92,255,.10);border:1px solid rgba(124,92,255,.2);color:#c9c1ff}
+.cta{border:1px solid var(--line);border-radius:28px;padding:55px;background:linear-gradient(135deg,rgba(124,92,255,.12),rgba(25,211,174,.06));text-align:center}
+.cta p{color:var(--muted);max-width:620px;margin:14px auto 25px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.contact small{display:block;color:var(--muted);margin-bottom:4px}.contact a{font-weight:650}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#707989;font-size:.82rem}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+.cursor{display:inline-block;width:3px;height:.9em;background:var(--accent2);margin-left:4px;animation:blink 1s infinite;vertical-align:-.08em}
+@keyframes blink{50%{opacity:0}}
+
+.portrait-card{display:flex;flex-direction:column;justify-content:center;min-height:540px;padding:34px}
+.portrait-glow{position:absolute;width:330px;height:330px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));filter:blur(70px);opacity:.18;left:50%;top:42%;transform:translate(-50%,-50%)}
+.portrait-frame{position:relative;width:min(100%,370px);aspect-ratio:4/5;margin:0 auto;border:1px solid rgba(255,255,255,.16);border-radius:28px;overflow:hidden;background:#f5f5f5;box-shadow:0 30px 80px rgba(0,0,0,.38)}
+.portrait-frame img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top}
+.portrait-caption{position:relative;margin-top:18px;display:flex;align-items:end;justify-content:space-between;gap:15px}
+.portrait-caption strong{display:block;margin-top:3px;font-size:1rem}
+.mini-label{font-size:.66rem;letter-spacing:.14em;color:#9da7b7;font-weight:800}
+.status{font-size:.7rem;color:#aeb7c5;white-space:nowrap}
+.status .dot{display:inline-block;margin-right:6px}
+@media(max-width:900px){.hero-grid,.about{grid-template-columns:1fr}.hero-card{min-height:400px}.skills{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:15px}.nav-links{display:none}.menu{display:block}}
+@media(max-width:600px){.hero{padding-top:110px}.hero-card{display:none}.skills{grid-template-columns:1fr}.exp{grid-template-columns:1fr;gap:8px}.contact-grid{grid-template-columns:1fr}.section{padding:80px 0}h1{font-size:3.2rem}}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">RAFI<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> Building my journey in technology</div>
+      <h1>Abu Bakar<br><span class="gradient">Al Rafi.</span><span class="cursor"></span></h1>
+      <p><strong>Aspiring Software Engineer</strong> & Technology Enthusiast with a passion for technology, communication, leadership, creative content, and building meaningful experiences.</p>
+      <div class="actions">
+        <a class="btn primary" href="#experience">Explore My Work ↗</a>
+        <a class="btn secondary" href="#contact">Let's Connect</a>
+      </div>
+    </div>
+    <div class="hero-card portrait-card reveal">
+      <div class="portrait-glow"></div>
+      <div class="portrait-frame">
+        <img src="rafi-profile.png" alt="Portrait of Abu Bakar Al Rafi">
+      </div>
+      <div class="portrait-caption">
+        <div>
+          <span class="mini-label">ABU BAKAR AL RAFI</span>
+          <strong>Aspiring Software Engineer</strong>
+        </div>
+        <span class="status"><span class="dot"></span> Available to connect</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">01 — About</div><h2>More than a title.</h2></div><p>A multidisciplinary profile combining technology, communication, creativity, and leadership.</p></div>
+  <div class="about">
+    <div class="panel reveal"><h3>Who I Am</h3><p>I am an aspiring Software Engineer and Technology Enthusiast who enjoys learning, communicating ideas, working with people, and taking responsibility. Alongside my technology journey, I have developed experience in documentary scriptwriting, content development, public speaking, event management, and team leadership.</p><p>I believe strong technology is built not only with code, but also with curiosity, teamwork, communication, and a willingness to keep improving.</p></div>
+    <div class="stats reveal">
+      <div class="stat"><strong>01</strong><span>Software Engineering Journey</span></div>
+      <div class="stat"><strong>03+</strong><span>Years of Content Writing</span></div>
+      <div class="stat"><strong>04+</strong><span>Core Professional Strengths</span></div>
+      <div class="stat"><strong>∞</strong><span>Curiosity to Learn</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="skills">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">02 — Capabilities</div><h2>What I bring.</h2></div><p>A balanced mix of technical ambition and people-focused skills.</p></div>
+  <div class="skills">
+    <div class="skill reveal"><div class="icon">🎤</div><h3>Public Speaking</h3><p>Confident communication, presentation, hosting, and audience engagement.</p></div>
+    <div class="skill reveal"><div class="icon">✍️</div><h3>Script Writing</h3><p>Documentary scripts, explanation content, storytelling, and content development.</p></div>
+    <div class="skill reveal"><div class="icon">◈</div><h3>Event Management</h3><p>Planning, coordination, execution, and student engagement for university events.</p></div>
+    <div class="skill reveal"><div class="icon">⚡</div><h3>Leadership</h3><p>Team handling, coordination, responsibility, and leading people toward shared goals.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="experience">
+<div class="container">
+  <div class="section-head reveal"><div><div class="kicker">03 — Experience</div><h2>Experience in action.</h2></div><p>Practical experience developed through content, university activities, events, and team environments.</p></div>
+  <div class="timeline">
+    <article class="exp reveal"><div class="date">Content</div><div><h3>Documentary Scriptwriting & Content Development</h3><p>Worked with multiple YouTube channels, specializing in documentary scriptwriting and developing engaging explanatory content.</p><div class="tags"><span class="tag">Documentary</span><span class="tag">Research</span><span class="tag">Storytelling</span><span class="tag">YouTube</span></div></div></article>
+    <article class="exp reveal"><div class="date">University</div><div><h3>Event Organization & Management</h3><p>Organized and managed university-level workshops, seminars, competitions, and student engagement programs, working across planning, coordination, communication, and execution.</p><div class="tags"><span class="tag">Events</span><span class="tag">Coordination</span><span class="tag">Workshops</span><span class="tag">Seminars</span></div></div></article>
+    <article class="exp reveal"><div class="date">Leadership</div><div><h3>Leadership & Team Management</h3><p>Built hands-on leadership experience across university classes, student groups, events, and organizational activities by coordinating teams and taking responsibility for shared objectives.</p><div class="tags"><span class="tag">Leadership</span><span class="tag">Teamwork</span><span class="tag">Communication</span><span class="tag">Management</span></div></div></article>
+  </div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container">
+  <div class="cta reveal">
+    <div class="kicker">04 — Contact</div><h2>Let's build something meaningful.</h2>
+    <p>Whether it's a technology project, creative collaboration, event, or professional opportunity — I'm always open to connecting.</p>
+    <div class="contact-grid">
+      <div class="contact"><small>Professional Email</small><a href="mailto:262-35-539@diu.edu.bd">262-35-539@diu.edu.bd</a></div>
+      <div class="contact"><small>Personal Email</small><a href="mailto:Rafitalukder1689@gmail.com">Rafitalukder1689@gmail.com</a></div>
+    </div>
+    <div class="actions" style="justify-content:center;margin-top:20px">
+      <a class="btn primary" href="https://www.linkedin.com/search/results/people/?keywords=Abu%20Bakar%20Al%20Rafi" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn secondary" href="mailto:262-35-539@diu.edu.bd">Email Me</a>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer><div class="container" style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap"><span>© <span id="year"></span> Abu Bakar Al Rafi</span><span>Designed for the journey ahead.</span></div></footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
+function toggleMenu(){
+  const n=document.querySelector('.nav-links');
+  const open=n.style.display==='flex';
+  n.style.display=open?'none':'flex';
+  n.style.position='absolute'; n.style.top='76px'; n.style.left='0'; n.style.right='0';
+  n.style.padding='20px'; n.style.background='rgba(7,9,13,.96)'; n.style.flexDirection='column';
+}
+</script>
+</body>
+</html>
